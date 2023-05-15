@@ -5,7 +5,22 @@ import matplotlib.pyplot as plt
 
 def difference_squares(x, y):
     """ TODO
+    Calculates the difference between squares of inputs x & y using two methods and displays difference to 32 d.p.
+    Arugements:
+    ----------
+    x = Input number 1
+    y = Input number 2
     """
+    #Calculate difference between squares using method 1
+    z1 = x**2 - y**2
+
+    #Calculate difference between squares using method 2
+    z2 = (x - y)*(x + y)
+
+    #Print results to screen to 32 d.p.
+    print(z1)
+    print(z2)
+
     pass
 
 
