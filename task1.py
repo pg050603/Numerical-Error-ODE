@@ -1,6 +1,13 @@
-import module_lab5
 from module_lab5 import *
 
-module_lab5.difference_squares(2, 1)
+difference_squares(1 + 2**-29, 1 + 2**-30)
+
+
+a = 1 + math.exp(1) - 15
+b = 1 + math.exp(2) - 15
+diff = b - a
+relative_error_subtraction(a, b, diff)
+
+
 
 pass
