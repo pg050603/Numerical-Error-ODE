@@ -1,14 +1,30 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-x = np.linspace(0, 2, 100)  # Sample data.
+gamma = [[1,2,3], [4,5,6], [7,8,9]]
 
-plt.figure(figsize=(5, 2.7), layout='constrained')
-plt.plot(x, x, label='linear')  # Plot some data on the (implicit) axes.
-plt.plot(x, x**2, label='quadratic')  # etc.
-plt.plot(x, x**3, label='cubic')
-plt.xlabel('x label')
-plt.ylabel('y label')
-plt.title("Simple Plot")
-plt.legend()
-c
+f =
+
+
+print(gamma)
+# a = len(gamma)
+# print(a)
+
+for i in range(len(gamma)):
+    gamma_row = gamma[i][:]
+    for j in range(len(gamma_row)):
+        print(gamma_row[j])
+
+
+#kn1 = f(tn, yn)
+#kn2 = f(tn + Bih, yn + gammaij * h * kn1)
+#kn3 = f(tn + Bih, yn + gammaij * h * kn2)
+#kn4 = f(tn + Bih, yn + gammaij * h * kn3)
+
+#For this case:
+#kn1 = f(tn, yn)
+#kn2 = f(tn + 0.5h, yn + 0.5h * kn1)
+#kn3 = f(tn + 0.5h, yn + 0.5h * kn2)
+#kn4 = f(tn + h, yn + h * kn3)
+
+# => yn+1 = yn + h/6(kn1 + 2kn2 + 2kn3 + kn4)

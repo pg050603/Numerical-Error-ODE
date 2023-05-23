@@ -18,6 +18,9 @@ mae = mean_absolute_error(y_exact, y_approx)
 t = list(a.t)[1:]
 
 print(mae)
+print(y_exact)
+print(y_approx)
+
 
 #Create figure
 plt.figure(figsize=(5,2.7), layout = 'constrained')

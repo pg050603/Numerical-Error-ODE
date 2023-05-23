@@ -216,6 +216,42 @@ def explicit_rk_step(f, t, y, h, alpha, beta, gamma):
         --------
         y_new float: value of dependent variable at end of step
         """
+
+    f0 = f(t,y)
+    f1 = f(t + h/2, y + (h*f0)/2)
+
+    y_new = y + f(f0 + f1 + .. / ...)
+
+
+
+    # kn1 = f(tn, yn)
+    # kn2 = f(tn + Bih, yn + gammaij * h * kn1)
+    # kn3 = f(tn + Bih, yn + gammaij * h * kn2)
+    # kn4 = f(tn + Bih, yn + gammaij * h * kn3)
+
+    # For this case:
+    # kn1 = f(tn, yn)
+    # kn2 = f(tn + 0.5h, yn + 0.5h * kn1)
+    # kn3 = f(tn + 0.5h, yn + 0.5h * kn2)
+    # kn4 = f(tn + h, yn + h * kn3)
+
+    # => yn+1 = yn + h/6(kn1 + 2kn2 + 2kn3 + kn4)
+
+    
+
+
+    for i in range(len(gamma)):
+        gamma_row = gamma[i][:]
+        for j in range(len):
+            b = np.dot(gamma_row, f_j)
+
+
+    a = 0
+    for i in range(len(alpha)):
+        a = alpha[i] * f_i[i]
+
+    y_new = y + h*a
+
 #     i = 0
 #     for *condition *:
 #         gamma_row = gamma[i][:]
