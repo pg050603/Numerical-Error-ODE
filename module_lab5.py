@@ -217,10 +217,34 @@ def explicit_rk_step(f, t, y, h, alpha, beta, gamma):
         y_new float: value of dependent variable at end of step
         """
 
-    f0 = f(t,y)
-    f1 = f(t + h/2, y + (h*f0)/2)
+    p = 1
+    function_i = [0] * len(beta)
+    function_i[0] = f(t,y)
 
-    y_new = y + f(f0 + f1 + .. / ...)
+    for i in range(len(gamma) - 1):
+        gamma_row = gamma[i+1][:]
+        for j in range(len(gamma_row)):
+            if gamma_row[j] != 0:
+                function_i[p] = f(t + beta[p-1]*h, y + gamma_row[j] * function_i[p-1])
+                p = p + 1
+
+    fi_weighted = 0
+    for l in range(len(function_i)):
+        fi_weighted = fi_weighted + (function_i[l] * alpha[l])
+
+    y_new = y + h * fi_weighted
+
+    return y_new
+
+
+
+
+
+
+
+    return y_new
+
+   # y_new = y + f(f0 + f1 + .. / ...)
 
 
 
